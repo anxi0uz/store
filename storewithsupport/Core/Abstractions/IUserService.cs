@@ -4,5 +4,6 @@ namespace store.application.Services;
 
 public interface IUserService
 {
-    Task<IEnumerable<UserConnection>> GetAdminsAsync(CancellationToken ct);
+    Task<Guid> RegisterUser(CancellationToken ct, CreateUserRequest request);
+    Task<User?> LoginUser(string email, string password, CancellationToken ct);
 }

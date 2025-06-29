@@ -350,3 +350,4 @@ E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\refint\store
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsupport.pdb
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsupport.genruntimeconfig.cache
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\ref\storewithsupport.dll
+E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsupport.sourcelink.json

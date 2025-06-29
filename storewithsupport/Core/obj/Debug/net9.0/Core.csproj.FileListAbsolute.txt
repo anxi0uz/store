@@ -9,3 +9,15 @@ E:\web dev\storewithsupport\Core\obj\Debug\net9.0\Core.dll
 E:\web dev\storewithsupport\Core\obj\Debug\net9.0\refint\Core.dll
 E:\web dev\storewithsupport\Core\obj\Debug\net9.0\Core.pdb
 E:\web dev\storewithsupport\Core\obj\Debug\net9.0\ref\Core.dll
+E:\web dev\store\storewithsupport\Core\bin\Debug\net9.0\Core.deps.json
+E:\web dev\store\storewithsupport\Core\bin\Debug\net9.0\Core.dll
+E:\web dev\store\storewithsupport\Core\bin\Debug\net9.0\Core.pdb
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.AssemblyInfoInputs.cache
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.AssemblyInfo.cs
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.csproj.CoreCompileInputs.cache
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.sourcelink.json
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.dll
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\refint\Core.dll
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.pdb
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\ref\Core.dll
