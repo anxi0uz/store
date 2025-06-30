@@ -21,3 +21,4 @@ E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.dll
 E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\refint\Core.dll
 E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.pdb
 E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\ref\Core.dll
+E:\web dev\store\storewithsupport\Core\obj\Debug\net9.0\Core.csproj.AssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using System.Collections.Concurrent;
+using Core.Models;
 using Infrastructure.Context;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,8 @@ public class AdminBackgroundService : IHostedService
     private readonly IServiceProvider _serviceProvider;
     private readonly IConfiguration _configuration;
     private readonly ILogger<AdminBackgroundService> _logger;
+
+    private readonly ConcurrentDictionary<string, AdminConnectionInfo> _connectedAdmins = new();
 
     public AdminBackgroundService(
         IHostApplicationLifetime appLifetime,
@@ -47,6 +50,9 @@ public class AdminBackgroundService : IHostedService
                 .ToListAsync(cancellationToken);
             foreach (var admin in admins)
             {
+                if (_connectedAdmins.ContainsKey(admin.UserName))
+                    continue;
+
                 var connection = new HubConnectionBuilder()
                     .WithUrl(_configuration["SignalR:HubUrl"] ?? "http://localhost:5137/techSupportHub")
                     .Build();
@@ -54,21 +60,46 @@ public class AdminBackgroundService : IHostedService
                 try
                 {
                     await connection.StartAsync(cancellationToken);
+
                     _logger.LogInformation("Connected to SignalR hub as admin: {User}", admin.UserName);
 
                     await connection.InvokeAsync("JoinRoom", admin, cancellationToken);
+
+                    _connectedAdmins[admin.UserName] = new AdminConnectionInfo(admin.UserName, admin.ChatRoom, connection);
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error connecting admin {User} to chat", admin.UserName);
+                    await connection.DisposeAsync();
                 }
             }
+
             await Task.Delay(60000, cancellationToken);
         }
     }
 
-    public Task StopAsync(CancellationToken cancellationToken)
+    public async Task StopAsync(CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        _logger.LogInformation("Stopping background service and disconnecting all admins...");
+
+        foreach (var admin in _connectedAdmins.Values)
+        {
+            try
+            {
+                if (admin.Connection.State is HubConnectionState.Connected)
+                {
+                    await admin.Connection.StopAsync(cancellationToken);
+                }
+
+                await admin.Connection.DisposeAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to dispose connection for admin {User}", admin.UserName);
+            }
+        }
+
+        _connectedAdmins.Clear();
+        _logger.LogInformation("All admin connections have been stopped and disposed.");
     }
 }

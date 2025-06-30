@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "KTgzVALdEY4=",
+  "dgSpecHash": "xpLYBgNWXDM=",
   "success": true,
   "projectFilePath": "E:\\web dev\\store\\storewithsupport\\Core\\Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\9.0.6\\microsoft.aspnetcore.connections.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\9.0.6\\microsoft.aspnetcore.signalr.client.core.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\9.0.6\\microsoft.aspnetcore.signalr.common.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\9.0.6\\microsoft.aspnetcore.signalr.protocols.json.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.6\\microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.6\\microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.features\\9.0.6\\microsoft.extensions.features.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.logging\\9.0.6\\microsoft.extensions.logging.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.6\\microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.options\\9.0.6\\microsoft.extensions.options.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512",
+    "C:\\Users\\yuzko\\.nuget\\packages\\system.threading.channels\\9.0.6\\system.threading.channels.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

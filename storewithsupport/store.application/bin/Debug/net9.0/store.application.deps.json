@@ -1018,6 +1018,9 @@
         }
       },
       "Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Client.Core": "9.0.6"
+        },
         "runtime": {
           "Core.dll": {
             "assemblyVersion": "1.0.0.0",

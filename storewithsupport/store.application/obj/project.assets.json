@@ -1654,6 +1654,9 @@
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Client.Core": "9.0.6"
+        },
         "compile": {
           "bin/placeholder/Core.dll": {}
         },
