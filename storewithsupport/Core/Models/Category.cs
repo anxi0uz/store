@@ -8,6 +8,6 @@ public class Category
     
     public string Description { get; set; }
     
-    public virtual ICollection<Product> Products { get; set; }
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
     
 }

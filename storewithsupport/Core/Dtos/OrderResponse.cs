@@ -4,4 +4,5 @@ public record OrderResponse(
     string UserEmail,
     DateTime OrderDate,
     decimal TotalAmount,
-    string ShippingAddress);
+    string ShippingAddress,
+    List<OrderItemResponse> OrderItems);

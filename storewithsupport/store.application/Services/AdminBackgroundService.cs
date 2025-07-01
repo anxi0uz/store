@@ -47,6 +47,7 @@ public class AdminBackgroundService : IHostedService
                 .Include(u => u.Role)
                 .Where(u => u.Role.Name == "admin")
                 .Select(u => new UserConnection { UserName = u.Email, ChatRoom = $"admin-{u.Email}" })
+                .AsNoTracking()
                 .ToListAsync(cancellationToken);
             foreach (var admin in admins)
             {

@@ -14,5 +14,5 @@ public class Order
     
     public string ShippingAddress { get; set; }
     
-    public virtual ICollection<OrderItem> OrderItems { get; set; }
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

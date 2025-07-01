@@ -42,6 +42,10 @@ public class ExceptionMiddleware
                     statusCode = StatusCodes.Status409Conflict;
                     message = "Ошибка в базе данных";
                     break;
+                case NullReferenceException _:
+                    statusCode = StatusCodes.Status404NotFound;
+                    message = ex.Message;
+                    break;
             }
             context.Response.StatusCode = statusCode;
             await context.Response.WriteAsJsonAsync(message);

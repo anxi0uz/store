@@ -35,7 +35,11 @@ app.UseHttpsRedirection();
 app.MapUsers();
 app.MapRoles();
 app.MapHub<TechSupportHub>("/techSupportHub");
+app.MapCategory();
 app.MapGet("/ping", () => "pong");
+app.MapOrderItem();
+app.MapOrders();
+app.MapProducts();
 //EndOfMapping
 
 

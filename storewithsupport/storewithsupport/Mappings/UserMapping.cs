@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Infrastructure.Context;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using store.application.Services;
@@ -26,12 +27,12 @@ public static class UserMapping
         {
             return await service.LoginUser(request.Email,request.Password,token);
         });
-        group.MapPut("/{id:guid}", async (AppDbContext context, Guid id, CreateUserRequest request) =>
+        group.MapPut("/{id:guid}", async (AppDbContext context, Guid id, CreateUserRequest request, IPasswordHasher<User> passwordHasher) =>
         {
             await context.Users.Where(p => p.Id == id).ExecuteUpdateAsync(s => s
                 .SetProperty(s => s.Email, request.Email)
                 .SetProperty(s => s.Password, request.Password)
-                .SetProperty(s => s.PhoneNumber, request.PhoneNumber)
+                .SetProperty(s => s.PhoneNumber, passwordHasher.HashPassword(null,request.Password))
                 .SetProperty(s => s.Address, request.Address)
                 .SetProperty(s => s.FirstName, request.FirstName)
                 .SetProperty(s => s.LastName, request.LastName)

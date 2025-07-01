@@ -10,13 +10,11 @@ public class Product
     
     public decimal Price { get; set; }
     
-    public byte[] Image { get; set; }
-    
     public int StockQuantity { get; set; }
     
     public Guid CategoryId { get; set; }
     
     public virtual Category Category { get; set; }
     
-    public virtual ICollection<OrderItem> OrderItems { get; set; }
+    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }
