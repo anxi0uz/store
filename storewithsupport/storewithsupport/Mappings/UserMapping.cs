@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using store.application.Services;
+using LoginRequest = Core.Dtos.LoginRequest;
 
 namespace storewithsupport.Mappings;
 
@@ -25,7 +26,7 @@ public static class UserMapping
         });
         group.MapPost("/login", async (AppDbContext context, LoginRequest request, IUserService service, CancellationToken token) =>
         {
-            return await service.LoginUser(request.Email,request.Password,token);
+            return await service.LoginUser(request,token);
         });
         group.MapPut("/{id:guid}", async (AppDbContext context, Guid id, CreateUserRequest request, IPasswordHasher<User> passwordHasher) =>
         {

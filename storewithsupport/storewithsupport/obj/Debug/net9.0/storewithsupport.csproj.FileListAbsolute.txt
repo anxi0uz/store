@@ -351,3 +351,5 @@ E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsup
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsupport.genruntimeconfig.cache
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\ref\storewithsupport.dll
 E:\web dev\store\storewithsupport\storewithsupport\obj\Debug\net9.0\storewithsupport.sourcelink.json
+E:\web dev\store\storewithsupport\storewithsupport\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\web dev\store\storewithsupport\storewithsupport\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

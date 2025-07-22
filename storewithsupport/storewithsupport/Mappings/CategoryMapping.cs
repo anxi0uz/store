@@ -23,7 +23,7 @@ public static class CategoryMapping
         });
         group.MapGet("/", async (AppDbContext context) =>
         {
-            await context.Categories.AsNoTracking().ToListAsync();
+            return await context.Categories.AsNoTracking().ToListAsync();
         });
         group.MapPut("/{id:guid}", async (AppDbContext context, CreateCategoryRequest request, Guid id) =>
         {
