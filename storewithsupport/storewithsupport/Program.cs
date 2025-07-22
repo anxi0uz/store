@@ -1,6 +1,7 @@
 using System.Text;
 using Core.Models;
 using Infrastructure.Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,8 +22,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddHostedService<AdminBackgroundService>();
 builder.Services.AddAuthentication(options =>
     {
-        options.DefaultAuthenticateScheme = "Bearer";
-        options.DefaultChallengeScheme = "Bearer";
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     })
     .AddJwtBearer(options =>
     {
@@ -48,9 +49,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseMiddleware<ExceptionMiddleware>();
-
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 //Mapping

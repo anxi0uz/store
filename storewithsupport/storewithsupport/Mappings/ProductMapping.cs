@@ -33,7 +33,9 @@ public static class ProductMapping
             if (product == null)
                 throw new NullReferenceException($"Product with id {productId} not found");
             else
-                await context.Products.ExecuteUpdateAsync(p => p
+                await context.Products
+                    .Where(p=>p.Id==productId)
+                    .ExecuteUpdateAsync(p => p
                     .SetProperty(s => s.Name, request.Name)
                     .SetProperty(s => s.Price, request.Price)
                     .SetProperty(s => s.Description, request.Description)
